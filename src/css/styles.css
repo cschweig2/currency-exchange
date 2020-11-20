@@ -10,7 +10,8 @@ img {
 }
 
 .col-8 {
-  background-image: url("./../assets/images/money.jpg")
+  background-image: url("./../assets/images/money.jpg");
+  background-size: cover;
 }
 
 .form-lg {
