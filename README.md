@@ -33,6 +33,11 @@ Describe: currencyConv();
 Test: "Should convert USD to euros."<br>
 Expect(currencyConv(50)).toEqual(42);<br>
 
+Describe: checkMatch();
+
+Test: "Should check to see if the users input matches the currency codes in the database."<br>
+Expect(checkMatch(userInput)).toEqual(true)<br>
+
 ## Support and contact details
 
 _If you run into any issues, you can contact the creator at chelraebecker@gmail.com, or make contributions to the code on GitHub via forking and creating a new branch._
