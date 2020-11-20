@@ -11,7 +11,7 @@ let showElements = (response, inputDollars, selectedConversion) => {
     let icelandConversion = response.conversion_rates.ISK;
     let japanConversion = response.conversion_rates.JPY;
     let mexConversion = response.conversion_rates.MXN;
-    // let indiaConversion = response.conversion_rates.INR;
+    let indiaConversion = response.conversion_rates.INR;
     $("#currency-code").text(selectedConversion);
     if (selectedConversion == "EUR") {
       let dollars = currencyConv(inputDollars, euroConversion);
@@ -27,6 +27,10 @@ let showElements = (response, inputDollars, selectedConversion) => {
     }
     if (selectedConversion == "MXN") {
       let dollars = currencyConv(inputDollars, mexConversion);
+      $("#updated-currency").text(dollars);
+    }
+    if (selectedConversion == "INR") {
+      let dollars = currencyConv(inputDollars, indiaConversion);
       $("#updated-currency").text(dollars);
     }
   } else {
