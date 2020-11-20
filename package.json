@@ -16,7 +16,7 @@
     ]
   },
   "keywords": [],
-  "author": "Chelsea Becker <cschweig2@gmail.com>",
+  "author": "Chelsea Becker <chelraebecker@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
