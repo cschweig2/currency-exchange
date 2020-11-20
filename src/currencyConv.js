@@ -1,5 +1,6 @@
 export default function currencyConv(input, response) {
   let dollars = parseInt(input);
-  return dollars;
+  dollars *= .844;
+  return Math.round(dollars);
 }
 
