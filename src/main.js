@@ -8,13 +8,17 @@ import currencyConv from './currencyConv.js';
 let showElements = (response, inputDollars, selectedConversion) => {
   if (response.conversion_rates) {
     let euroConversion = response.conversion_rates.EUR;
-    // let icelandConversion = response.conversion_rates.ISK;
+    let icelandConversion = response.conversion_rates.ISK;
     // let japanConversion = response.conversion_rates.JPY;
     // let mexConversion = response.conversion_rates.MXN;
     // let indiaConversion = response.conversion_rates.INR;
+    $("#currency-code").text(selectedConversion);
     if (selectedConversion == "EUR") {
       let dollars = currencyConv(inputDollars, euroConversion);
-      $("#currency-code").text(selectedConversion);
+      $("#updated-currency").text(dollars);
+    }
+    if (selectedConversion == "ISK") {
+      let dollars = currencyConv(inputDollars, icelandConversion);
       $("#updated-currency").text(dollars);
     }
   } else {
