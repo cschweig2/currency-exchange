@@ -10,7 +10,7 @@ let showElements = (response, inputDollars, selectedConversion) => {
     let euroConversion = response.conversion_rates.EUR;
     let icelandConversion = response.conversion_rates.ISK;
     let japanConversion = response.conversion_rates.JPY;
-    // let mexConversion = response.conversion_rates.MXN;
+    let mexConversion = response.conversion_rates.MXN;
     // let indiaConversion = response.conversion_rates.INR;
     $("#currency-code").text(selectedConversion);
     if (selectedConversion == "EUR") {
@@ -23,6 +23,10 @@ let showElements = (response, inputDollars, selectedConversion) => {
     }
     if (selectedConversion == "JPY") {
       let dollars = currencyConv(inputDollars, japanConversion);
+      $("#updated-currency").text(dollars);
+    }
+    if (selectedConversion == "MXN") {
+      let dollars = currencyConv(inputDollars, mexConversion);
       $("#updated-currency").text(dollars);
     }
   } else {
