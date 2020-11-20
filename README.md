@@ -33,6 +33,8 @@ Describe: sampleFunc();
 Test: "Should convert USD string to numbers."<br>
 Expect(currencyConv("50")).toEqual(50); <br>
 
+Test: "Should convert USD to euros."<br>
+Expect(currencyConv(50)).toEqual(42);<br>
 
 ## Support and contact details
 
