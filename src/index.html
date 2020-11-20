@@ -12,11 +12,22 @@
       <div class="col-8">
         <img src="assets/images/money.jpg" alt="Photo of stacked coins">
         <div class="md-form form-lg">
-          <input type="number" id="currency" class="form-control form-control-lg">
-          <label for="currency">Enter currency amount</label>
-          <br>
-          <button type="submit" class="button">Submit</button>
+          <form id="input">
+            <input type="number" id="currency" class="form-control form-control-lg">
+            <label for="currency">Enter currency amount (in US dollars)</label>
+            <br>
+            <button type="submit" class="button" id="europe">Convert to Euros</button>
+            <button type="submit" class="button" id="iceland">Convert to Icelandic Krona</button>
+            <button type="submit" class="button" id="japan">Convert to Japanese Yen</button>
+            <button type="submit" class="button" id="mexico">Convert to Mexican Pesos</button>
+            <button type="submit" class="button" id="india">Convert to Indian Rupee</button>
+          </form>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="updated-currency">
+        <span id="error"></span>
       </div>
     </div>
   </div>
