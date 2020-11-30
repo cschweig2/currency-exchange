@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './services/CurrencyService';
 import currencyConv from './currencyConv.js';
+import randomConv from './randomConv';
 
 function validateInput(userInput, response) {
   let element;
@@ -22,16 +23,9 @@ async function showElements (response, inputDollars, selectedConversion, userInp
   if (response.conversion_rates) {
     if (userInput != "") {
       validateInput(userInput, response);
-    }
-    // could access conversion rates by response.conversion_rate["EUR"];
-    // 
-    // getRate(); function to get conversion rate based on users inputted key
-    // if return is undefined, the user did not put in a valid key, return error that it is invalid
-    // if return is a conversion rate, place conversion rate into currency converter function
-    // put currency in output
-    // let randomRate = response.conversion_rates.userInput;
-    // currencyConv(inputDollars, randomRate);
-    
+      let dollars = randomConv(inputDollars, userInput, response);
+      $("#updated-currency").text(dollars);
+    }   
     let euroConversion = response.conversion_rates.EUR;
     let icelandConversion = response.conversion_rates.ISK;
     let japanConversion = response.conversion_rates.JPY;

@@ -3,4 +3,3 @@ export default function currencyConv(input, conversionRate) {
   dollars *= conversionRate;
   return Math.round(dollars);
 }
-
