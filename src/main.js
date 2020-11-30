@@ -5,27 +5,32 @@ import './css/styles.css';
 import CurrencyService from './services/CurrencyService';
 import currencyConv from './currencyConv.js';
 
-function getRate(userInput, response) {
-  let convRate = response.conversion_rates[userInput];
-  if (convRate != undefined){
-    return convRate;
-  } else {
-    $("#error").text("Currency code does not match our records");
-    throw Error("Currency code does not match our records");
+function validateInput(userInput, response) {
+  let element;
+  for (element in response.conversion_rates) {
+    if (element == userInput) {
+      $("#error").text("Input accepted");
+      return true;
+    } else {
+      $("#error").text("Currency code does not match our records");
+      continue;
+    }
   }
 }
 
 async function showElements (response, inputDollars, selectedConversion, userInput) {
   if (response.conversion_rates) {
-
+    if (userInput != "") {
+      validateInput(userInput, response);
+    }
     // could access conversion rates by response.conversion_rate["EUR"];
     // 
     // getRate(); function to get conversion rate based on users inputted key
     // if return is undefined, the user did not put in a valid key, return error that it is invalid
     // if return is a conversion rate, place conversion rate into currency converter function
     // put currency in output
-    const rate = await getRate(userInput, response);
-    currencyConv(inputDollars, rate);
+    // let randomRate = response.conversion_rates.userInput;
+    // currencyConv(inputDollars, randomRate);
     
     let euroConversion = response.conversion_rates.EUR;
     let icelandConversion = response.conversion_rates.ISK;
