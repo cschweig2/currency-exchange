@@ -56,7 +56,7 @@ async function showElements (response, inputDollars, selectedConversion, userInp
       $("#updated-currency").text(dollars);
     }
   } else {
-    $("#error").text(`An error occurred: ${response.result}`);
+    $("#error").text(`An error occurred: ${response["error-type"]}`);
   }
 }
 

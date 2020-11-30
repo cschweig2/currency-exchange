@@ -7,7 +7,7 @@ export default class CurrencyService {
       }
       return response.json();
     } catch(err) {
-      return Error(err);
+      return err;
     }
   }
 }
