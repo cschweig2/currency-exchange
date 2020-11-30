@@ -1,6 +1,6 @@
 # Currency Exchange
 
-#### Code Review, Last Updated 11.20.2020
+#### Code Review, Last Updated 11.29.2020
 
 #### **By Chelsea Becker**
 
@@ -21,7 +21,7 @@ _This application will convert USD to another form of currency._
 
 ## Known Bugs
 
-1. _List known bugs, if any._
+_No known bugs at this time._
 
 ## Test Specs
 
