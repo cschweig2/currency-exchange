@@ -25,13 +25,16 @@ async function showElements (response, inputDollars, selectedConversion, userInp
       validateInput(userInput, response);
       let dollars = randomConv(inputDollars, userInput, response);
       $("#updated-currency").text(dollars);
-    }   
+      $("#currency-code").text(userInput);
+    } else {
+      $("#currency-code").text(selectedConversion);
+    }
     let euroConversion = response.conversion_rates.EUR;
     let icelandConversion = response.conversion_rates.ISK;
     let japanConversion = response.conversion_rates.JPY;
     let mexConversion = response.conversion_rates.MXN;
     let indiaConversion = response.conversion_rates.INR;
-    $("#currency-code").text(selectedConversion);
+    
     if (selectedConversion == "EUR") {
       let dollars = currencyConv(inputDollars, euroConversion);
       $("#updated-currency").text(dollars);
