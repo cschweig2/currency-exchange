@@ -18,7 +18,8 @@ _This application will convert USD to another form of currency._
 4. _Visit https://nodesjs.org to install node.js._
 5. _Run npm install to install all dependencies._
 6. _Visit https://www.exchangerate-api.com to view documentation and obtain an API key._ <br>
-6a. _Paste the API key into a .env file._
+6a. _Paste the API key into a .env file as such:_<br>
+    API_KEY={PASTE API KEY HERE}<br>
 7. _You may view the website displaying the application by clicking the index.html file or view the code on your favorite text editor, such as Visual Studio Code._
 
 ## Known Bugs
